@@ -109,7 +109,7 @@ public class ForecastFragment extends Fragment {
         SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
         String location= sharedpreferences.getString(getString(R.string.pref_location_key),
-                getString(R.string.pref_default_location_key));
+                getString(R.string.pref_location_default));
         FetchWeatherTask fetchWeatherTask = new FetchWeatherTask();
 
         fetchWeatherTask.execute(location);
@@ -139,8 +139,8 @@ public class ForecastFragment extends Fragment {
 
         SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-        String units= sharedpreferences.getString(getString(R.string.temperature_units),
-                getString(R.string.pref_default_units));
+        String units= sharedpreferences.getString(getString(R.string.pref_units_key),
+                getString(R.string.pref_units_imperial));
         @Override
         protected String[] doInBackground(String... params) {
             try {
